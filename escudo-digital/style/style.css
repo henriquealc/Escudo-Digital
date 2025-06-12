@@ -1,57 +1,281 @@
 
+/* Remove margens e espaçamentos padrão dos navegadores e usa box-sizing mais previsível */
 * {
-    padding: 0px;
-    margin: 0px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-html{
+/* Adiciona rolagem suave ao navegar por âncoras da página */
+html {
     scroll-behavior: smooth;
 }
 
-
-header nav{
-    padding: 10px;
-    height: 130px;
-    background: rgb(0, 4, 253);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Define uma fonte padrão para todo o site */
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ========================================================= */
+/* CABEÇALHO E NAVEGAÇÃO */
+/* ========================================================= */
+
+/* Estilo do menu de navegação dentro do cabeçalho */
+header nav {
+    padding: 10px 30px;                 /* Espaço interno ao redor do conteúdo */
+    background: rgb(0, 4, 253);         /* Cor de fundo azul */
+    display: flex;                      /* Usa Flexbox para alinhar os elementos em linha */
+    flex-wrap: wrap;                    /* Permite que itens quebrem linha se necessário */
+    justify-content: space-between;    /* Espaça os itens igualmente entre os lados */
+    align-items: center;               /* Alinha verticalmente ao centro */
+}
+
+/* ========================================================= */
+/* LOGO */
+/* ========================================================= */
+
+/* Estiliza a imagem do logo dentro do menu */
 nav img {
-    margin-left: 80px;
+    max-width: 180px;    /* Define uma largura máxima */
+    height: auto;        /* Mantém a proporção da imagem */
 }
 
-nav ul{
-    display: flex;
-    list-style: none;
-    padding: 10px;
-    margin: auto;
+/* ========================================================= */
+/* LISTA DE NAVEGAÇÃO */
+/* ========================================================= */
+
+/* Estilo da lista de links no menu */
+nav ul {
+    display: flex;           /* Coloca os itens em linha */
+    flex-wrap: wrap;         /* Permite quebrar linha quando não couber */
+    list-style: none;        /* Remove marcadores de lista */
+    gap: 10px;               /* Espaço entre os itens */
+    margin-left: auto;       /* Empurra a lista para o lado direito */
 }
 
+/* Estilo geral dos links */
 nav a {
+    color: white;                  /* Cor do texto branca */
+    text-decoration: none;         /* Remove sublinhado */
+    font-family: system-ui, sans-serif;
+    text-transform: uppercase;     /* Transforma o texto em maiúsculas */
+    padding: 10px;                 /* Espaçamento interno */
+    font-weight: bold;            /* Deixa o texto em negrito */
+}
+
+/* Estilo ao passar o mouse nos links */
+nav ul li a:hover {
+    background: rgb(52, 52, 255);  /* Fundo azul mais claro */
+    color: aqua;                   /* Cor do texto em azul claro */
+    border-radius: 10px;           /* Bordas arredondadas */
+}
+
+/* ========================================================= */
+/* CONTAINERS DAS SEÇÕES */
+/* ========================================================= */
+
+/* Container geral para seções */
+.container02 {
+    min-height: 85vh;          /* Altura mínima de 85% da altura da tela */
+    background: #dfdfdf;       /* Fundo cinza claro */
+    display: flex;             /* Usa Flexbox para alinhar conteúdo */
+    justify-content: center;  /* Centraliza horizontalmente */
+    align-items: center;      /* Centraliza verticalmente */
+    padding: 40px 20px;       /* Espaçamento interno */
+}
+
+/* ========================================================= */
+/* SEÇÕES COM CONTEÚDO */
+/* ========================================================= */
+
+/* Estiliza duas seções específicas */
+.senhasFortes,
+.navegacaoSegura {
+    background: blue;          /* Fundo azul */
+    color: white;              /* Texto branco */
+    width: 100%;               /* Ocupa toda a largura disponível */
+    max-width: 1300px;         /* Limita a largura máxima */
+    border-radius: 20px;       /* Bordas arredondadas */
+    padding: 50px;             /* Espaçamento interno */
+    font-size: 20px;           /* Tamanho do texto */
+}
+
+/* ========================================================= */
+/* LAYOUT DE TEXTO E IMAGEM LADO A LADO */
+/* ========================================================= */
+
+/* Envolve imagem e texto em uma estrutura flexível */
+.content-wrapper {
+    display: flex;                   /* Layout flexível */
+    align-items: center;            /* Alinha verticalmente */
+    justify-content: space-between; /* Espaça os elementos igualmente */
+    gap: 30px;                      /* Espaço entre imagem e texto */
+}
+
+/* Texto ocupa uma parte proporcional do espaço */
+.content-wrapper .text {
+    flex: 1;
+}
+
+/* Imagem ao lado do texto */
+.content-wrapper img {
+    flex: 1;                    /* Ocupa o mesmo espaço do texto */
+    max-width: 500px;           /* Limite máximo de largura */
+    width: 100%;                /* Responsivo */
+    height: auto;               /* Mantém a proporção */
+    border-radius: 10px;        /* Bordas arredondadas */
+}
+
+/* Espaçamento adicional para o texto */
+.text {
+    margin-top: 60px;
+}
+
+/* Estilo da lista dentro do bloco de texto */
+.text ul {
     color: white;
+    padding: 20px;
+    padding-left: 40px; /* Recuo da lista */
+}
+
+/* Espaçamento nos títulos */
+.text h2,
+.text h3 {
+    margin-top: 10px;
+}
+
+/* Destaque em amarelo */
+.destaque {
+    font-weight: bold;
+    color: yellow;
+    margin-top: 10px;
+}
+
+/* ========================================================= */
+/* RODAPÉ */
+/* ========================================================= */
+
+/* Estilo geral do rodapé */
+footer {
+    background-color: rgb(0, 4, 253); /* Azul forte */
+    color: white;                    /* Texto branco */
+    padding: 40px 20px;
+}
+
+/* Container flexível para o conteúdo do rodapé */
+div.footer {
+    display: flex;
+    flex-wrap: wrap;                /* Permite quebra de linha em telas menores */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;                   /* Centraliza o conteúdo */
+    font-size: 20px;
+}
+
+/* Blocos de conteúdo do rodapé */
+.sobre,
+.linksuteis {
+    flex: 1;                        /* Tamanho proporcional */
+    min-width: 200px;              /* Largura mínima */
+    margin-bottom: 20px;
+}
+
+/* Lista de links úteis */
+.linksuteis ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Links dentro da lista */
+.linksuteis ul a {
     text-decoration: none;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    text-transform: uppercase;
-    padding: 10px;
-}
-
-.container01, .container02{
-    height: 100vh;
-    background: rgb(255, 255, 255);
-    display: grid;
-    place-items: center;
-    overflow: hidden;
-}
-
-.senhasFortes, .navegacaoSegura {
-    background: blue;
     color: white;
-    width: 80%;
-    height: 80%;
-    border-radius: 2%;
-    overflow: hidden;
-    padding: 50px;
-    font-size: 30px;
+}
+
+/* Efeito hover nos links do rodapé */
+.linksuteis ul a:hover {
+    color: aqua;
+    border-radius: 10px;
+}
+
+/* Frase de conscientização centralizada */
+.fraseconscientização {
+    flex: 1 100%;           /* Ocupa linha inteira */
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* ========================================================= */
+/* RESPONSIVIDADE - MEDIA QUERIES */
+/* ========================================================= */
+
+@media (max-width: 992px) {
+    /* Alinha texto e imagem em coluna */
+    .content-wrapper {
+        flex-direction: column;
+        text-align: center;     /* Centraliza texto */
+    }
+
+    /* Imagem menor e centralizada */
+    .content-wrapper img {
+        max-width: 80%;
+        margin-top: 20px;
+    }
+
+    /* Reduz margem superior do texto */
+    .text {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Menu de navegação em coluna */
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Reduz logo no mobile */
+    nav img {
+        max-width: 150px;
+        margin-bottom: 10px;
+    }
+
+    /* Lista de navegação em coluna */
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    /* Links do menu ocupam toda a largura */
+    nav a {
+        width: 100%;
+        display: block;
+        padding: 12px 0;
+    }
+
+    /* Reduz padding nas seções */
+    .senhasFortes,
+    .navegacaoSegura {
+        padding: 30px;
+    }
+
+    /* Rodapé empilhado verticalmente */
+    div.footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Blocos do rodapé ocupam largura total */
+    .sobre,
+    .linksuteis {
+        flex: 1 1 100%;
+    }
+
+    /* Espaçamento na frase final */
+    .fraseconscientização {
+        margin-top: 20px;
+    }
 }
