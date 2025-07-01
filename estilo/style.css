@@ -21,7 +21,7 @@ body {
 /* Estilo do menu de navegação dentro do cabeçalho */
 header nav {
     padding: 10px 30px;                 /* Espaço interno ao redor do conteúdo */
-    background: rgb(0, 4, 253);         /* Cor de fundo azul */
+    background: rgba(4, 1, 116, 1);         /* Cor de fundo azul */
     display: flex;                      /* Usa Flexbox para alinhar os elementos em linha */
     flex-wrap: wrap;                    /* Permite que itens quebrem linha se necessário */
     justify-content: space-between;    /* Espaça os itens igualmente entre os lados */
@@ -56,7 +56,7 @@ nav a {
 
 /* Estilo ao passar o mouse nos links */
 nav ul li a:hover {
-    background: rgb(52, 52, 255);  /* Fundo azul mais claro */
+    background: rgb(12, 12, 255);  /* Fundo azul mais claro */
     color: aqua;                   /* Cor do texto em azul claro */
     border-radius: 10px;           /* Bordas arredondadas */
 }
@@ -65,7 +65,7 @@ nav ul li a:hover {
 /* Container geral para seções */
 .container02 {
     min-height: 85vh;          /* Altura mínima de 85% da altura da tela */
-    background: #dfdfdf;       /* Fundo cinza claro */
+    background: #94949488;       /* Fundo cinza claro */
     display: flex;             /* Usa Flexbox para alinhar conteúdo */
     justify-content: center;  /* Centraliza horizontalmente */
     align-items: center;      /* Centraliza verticalmente */
@@ -76,7 +76,7 @@ nav ul li a:hover {
 /* Estiliza duas seções específicas */
 .senhasFortes,
 .navegacaoSegura {
-    background: blue;          /* Fundo azul */
+    background: rgba(4, 1, 116, 1);          /* Fundo azul */
     color: white;              /* Texto branco */
     width: 100%;               /* Ocupa toda a largura disponível */
     max-width: 1300px;         /* Limita a largura máxima */
@@ -136,7 +136,7 @@ nav ul li a:hover {
 
 /* Estilo geral do rodapé */
 footer {
-    background-color: rgb(0, 4, 253); /* Azul forte */
+    background-color: rgba(4, 1, 116, 1);
     color: white;                    /* Texto branco */
     padding: 40px 20px;
 }
