@@ -16,9 +16,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-/* ========================================================= */
-/* CABEÇALHO E NAVEGAÇÃO */
-/* ========================================================= */
+
 
 /* Estilo do menu de navegação dentro do cabeçalho */
 header nav {
@@ -30,19 +28,12 @@ header nav {
     align-items: center;               /* Alinha verticalmente ao centro */
 }
 
-/* ========================================================= */
-/* LOGO */
-/* ========================================================= */
-
 /* Estiliza a imagem do logo dentro do menu */
 nav img {
     max-width: 180px;    /* Define uma largura máxima */
     height: auto;        /* Mantém a proporção da imagem */
 }
 
-/* ========================================================= */
-/* LISTA DE NAVEGAÇÃO */
-/* ========================================================= */
 
 /* Estilo da lista de links no menu */
 nav ul {
@@ -70,9 +61,6 @@ nav ul li a:hover {
     border-radius: 10px;           /* Bordas arredondadas */
 }
 
-/* ========================================================= */
-/* CONTAINERS DAS SEÇÕES */
-/* ========================================================= */
 
 /* Container geral para seções */
 .container02 {
@@ -84,9 +72,6 @@ nav ul li a:hover {
     padding: 40px 20px;       /* Espaçamento interno */
 }
 
-/* ========================================================= */
-/* SEÇÕES COM CONTEÚDO */
-/* ========================================================= */
 
 /* Estiliza duas seções específicas */
 .senhasFortes,
@@ -100,9 +85,6 @@ nav ul li a:hover {
     font-size: 20px;           /* Tamanho do texto */
 }
 
-/* ========================================================= */
-/* LAYOUT DE TEXTO E IMAGEM LADO A LADO */
-/* ========================================================= */
 
 /* Envolve imagem e texto em uma estrutura flexível */
 .content-wrapper {
@@ -151,9 +133,6 @@ nav ul li a:hover {
     margin-top: 10px;
 }
 
-/* ========================================================= */
-/* RODAPÉ */
-/* ========================================================= */
 
 /* Estilo geral do rodapé */
 footer {
@@ -205,9 +184,6 @@ div.footer {
     text-align: center;
 }
 
-/* ========================================================= */
-/* RESPONSIVIDADE - MEDIA QUERIES */
-/* ========================================================= */
 
 @media (max-width: 992px) {
     /* Alinha texto e imagem em coluna */
