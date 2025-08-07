@@ -13,7 +13,14 @@
             <abbr title="Escudo Digital">
                 <img src="imagens/img/logo-site-removebg-preview.png" alt="logo-do-escudo-digital" width="250px">
             </abbr>
-            <ul>
+            <!-- Botão hamburguer visível só no mobile -->
+            <button id="menu-toggle" class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul id="menu">
                 <li><a href="#senhas">🔐 Senhas Fortes</a></li>
                 <li><a href="#navegacao">🌐 Navegação Segura</a></li>
                 <li><a href="#email">📧 E-mails Perigosos</a></li>
@@ -25,8 +32,11 @@
         </nav>
     </header>
 
+    <!-- Importação do JavaScript -->
+    <script src="scripts/main.js"></script>
+
     <div class="container02" id="senhas">
-        <section class="senhasFortes">
+        <section class="senhasFortes reveal reveal-delay-1">
             <div class="content-wrapper">
                 <div class="text">
                     <h1>🔐 Senhas Fortes</h1>
@@ -58,7 +68,7 @@
     </div>
 
     <div class="container02" id="navegacao">
-        <section class="navegacaoSegura">
+        <section class="navegacaoSegura reveal reveal-delay-2">
             <div class="content-wrapper">
                 <div class="text">
                     <h1>🌐 Navegação Segura</h1>
@@ -90,7 +100,7 @@
     </div>
 
     <div class="container02" id="email">
-        <section class="navegacaoSegura">
+        <section class="navegacaoSegura reveal reveal-delay-3">
             <div class="content-wrapper">
                 <div class="text">
                     <h1>📧 E-mails Perigosos</h1>
@@ -122,7 +132,7 @@
     </div>
 
     <div class="container02" id="celular">
-        <section class="navegacaoSegura">
+        <section class="navegacaoSegura reveal reveal-delay-4">
             <div class="content-wrapper">
                 <div class="text">
                     <h1>📱 Celulares/Tablets</h1>
@@ -152,7 +162,7 @@
     </div>
 
     <div class="container02" id="redes">
-        <section class="navegacaoSegura">
+        <section class="navegacaoSegura reveal reveal-delay-1">
             <div class="content-wrapper">
                 <div class="text">
                     <h1>👥 Use as Redes Sociais com Segurança!</h1>
@@ -183,7 +193,7 @@
     </div>
 
     <div class="container02" id="seguranca">
-        <section class="navegacaoSegura">
+        <section class="navegacaoSegura reveal reveal-delay-2">
             <div class="content-wrapper">
                 <div class="text">
                     <h1>👨‍👩‍👧‍👦 Segurança na Internet para Crianças e Idosos</h1>
@@ -212,7 +222,7 @@
         </section>
     </div>
 
-    <footer>
+    <footer class="reveal reveal-delay-4">
     <div class="footer">
         <div class="sobre">
         <h3>Sobre o Projeto</h3>
