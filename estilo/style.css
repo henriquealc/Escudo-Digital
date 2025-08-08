@@ -1,8 +1,7 @@
-
 /* Remove margens e espaçamentos padrão dos navegadores e usa box-sizing mais previsível */
 * {
-    padding: 0;
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -14,18 +13,108 @@ html {
 /* Define uma fonte padrão para todo o site */
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f0f0;
+    padding-top: 190px
 }
 
+/* ANIMAÇÃO GERAL */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+.reveal {
+    opacity: 0;
+    animation: fadeUp 1s ease-out forwards;
+}
+
+.reveal-delay-1 { animation-delay: 0.2s; }
+.reveal-delay-2 { animation-delay: 0.4s; }
+.reveal-delay-3 { animation-delay: 0.6s; }
+.reveal-delay-4 { animation-delay: 0.8s; }
 
 /* Estilo do menu de navegação dentro do cabeçalho */
 header nav {
-    padding: 10px 30px;                 /* Espaço interno ao redor do conteúdo */
-    background: rgba(4, 1, 116, 1);         /* Cor de fundo azul */
-    display: flex;                      /* Usa Flexbox para alinhar os elementos em linha */
-    flex-wrap: wrap;                    /* Permite que itens quebrem linha se necessário */
-    justify-content: space-between;    /* Espaça os itens igualmente entre os lados */
-    align-items: center;               /* Alinha verticalmente ao centro */
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    padding: 10px 30px;                     /* Espaço interno ao redor do conteúdo */
+    background: rgba(4, 1, 116, 1);       /* Cor de fundo azul */
+    display: flex;                          /* Usa Flexbox para alinhar os elemntos em linha */
+    flex-wrap: wrap;                        /* Permite que itens quebrem linha se necessário */
+    justify-content: space-between;         /* Espaça os itens igualmente entre os lados */
+    align-items: center;                    /* Alinha verticalmente ao centro */
+    z-index: 1000;                          /* Fica por cima dos outros elementos*/
+}
+
+/* Esconde o botão no desktop */
+.menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    position: relative;
+    z-index: 1001;
+}
+
+/* Menu em barras */
+.menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: #FFF;
+    margin: 5px 0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* X quando menu for clicado */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+#menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+/* Cores e estilo base */
+#menu li a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+#menu li a:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+/* Link "Denuncie" com destaque */
+#menu li a.denuncie {
+    color: aqua;
+    border: 1px solid aqua;
+}
+#menu li a.denuncie:hover {
+    background: aqua;
+    color: black;
 }
 
 /* Estiliza a imagem do logo dentro do menu */
@@ -33,7 +122,6 @@ nav img {
     max-width: 180px;    /* Define uma largura máxima */
     height: auto;        /* Mantém a proporção da imagem */
 }
-
 
 /* Estilo da lista de links no menu */
 nav ul {
@@ -52,26 +140,27 @@ nav a {
     text-transform: uppercase;     /* Transforma o texto em maiúsculas */
     padding: 10px;                 /* Espaçamento interno */
     font-weight: bold;            /* Deixa o texto em negrito */
+    transition: all 0.3s ease;    /* Anima suavemente a transição de estilos */
+    border-radius: 8px;           /* Arredonda as bordas */
 }
 
-/* Estilo ao passar o mouse nos links */
-nav ul li a:hover {
+nav a:hover,
+nav a:focus-visible {
     background: rgb(12, 12, 255);  /* Fundo azul mais claro */
     color: aqua;                   /* Cor do texto em azul claro */
-    border-radius: 10px;           /* Bordas arredondadas */
+    outline: none;
 }
-
 
 /* Container geral para seções */
 .container02 {
-    min-height: 85vh;          /* Altura mínima de 85% da altura da tela */
+    min-height: auto;  /* Altura da tela menos a altura da navbar (60px) */
     background: #94949488;       /* Fundo cinza claro */
     display: flex;             /* Usa Flexbox para alinhar conteúdo */
     justify-content: center;  /* Centraliza horizontalmente */
     align-items: center;      /* Centraliza verticalmente */
     padding: 40px 20px;       /* Espaçamento interno */
-}
 
+}
 
 /* Estiliza duas seções específicas */
 .senhasFortes,
@@ -83,8 +172,8 @@ nav ul li a:hover {
     border-radius: 20px;       /* Bordas arredondadas */
     padding: 50px;             /* Espaçamento interno */
     font-size: 20px;           /* Tamanho do texto */
+    animation: fadeUp 2s ease-out forwards; /* Animar elemento com fadeUP*/
 }
-
 
 /* Envolve imagem e texto em uma estrutura flexível */
 .content-wrapper {
@@ -106,6 +195,11 @@ nav ul li a:hover {
     width: 100%;                /* Responsivo */
     height: auto;               /* Mantém a proporção */
     border-radius: 10px;        /* Bordas arredondadas */
+    transition: transform 0.3s ease; /* Anima suavemente a mudança na propriedade */
+}
+
+.content-wrapper img:hover {
+    transform: scale(1.03);
 }
 
 /* Espaçamento adicional para o texto */
@@ -132,7 +226,6 @@ nav ul li a:hover {
     color: yellow;
     margin-top: 10px;
 }
-
 
 /* Estilo geral do rodapé */
 footer {
@@ -169,6 +262,7 @@ div.footer {
 .linksuteis ul a {
     text-decoration: none;
     color: white;
+    transition: color 0.3s ease;
 }
 
 /* Efeito hover nos links do rodapé */
@@ -184,7 +278,7 @@ div.footer {
     text-align: center;
 }
 
-
+/* RESPONSIVIDADE */
 @media (max-width: 992px) {
     /* Alinha texto e imagem em coluna */
     .content-wrapper {
@@ -205,39 +299,67 @@ div.footer {
 }
 
 @media (max-width: 768px) {
-    /* Menu de navegação em coluna */
-    header nav {
-        flex-direction: column;
-        align-items: flex-start;
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1100;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        font-size: 28px;
+        color: aqua;
+        padding: 0;
+        width: 30px;
+        height: 30px;
     }
 
-    /* Reduz logo no mobile */
-    nav img {
-        max-width: 150px;
-        margin-bottom: 10px;
-    }
-
-    /* Lista de navegação em coluna */
-    nav ul {
+    #menu {
+        display: none;
         flex-direction: column;
+        background: rgba(4, 1, 116, 1);
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
-        align-items: flex-start;
+        padding: 60px 0 20px 0;
+        border-radius: 0 0 10px 10px;
+        z-index: 1000;
+        height: 100vh;
+        overflow-y: auto;
     }
 
-    /* Links do menu ocupam toda a largura */
-    nav a {
+    #menu.active {
+        display: flex;
+    }
+
+    #menu li {
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    #menu li a {
         width: 100%;
         display: block;
         padding: 12px 0;
+        color: white;
+        text-decoration: none;
+        transition: background 0.3s ease;
     }
 
-    /* Reduz padding nas seções */
+    #menu li a:hover {
+        background: rgba(0, 255, 255, 0.2);
+    }
+
+    /* Reduz padding das seções para mobile */
     .senhasFortes,
     .navegacaoSegura {
         padding: 30px;
     }
 
-    /* Rodapé empilhado verticalmente */
+    /* Rodapé empilhado vertical */
     div.footer {
         flex-direction: column;
         align-items: center;
