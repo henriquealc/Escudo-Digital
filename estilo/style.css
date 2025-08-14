@@ -288,12 +288,90 @@ div.footer {
 
     /* Imagem menor e centralizada */
     .content-wrapper img {
-        max-width: 80%;
+        max-width: 60%;
         margin-top: 20px;
     }
 
     /* Reduz margem superior do texto */
-    .text {
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1100;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+    }
+
+    #menu {
+        display: none;
+        flex-direction: column;
+        background: rgba(4, 1, 116, 1);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 60px 0 20px 0;
+        border-radius: 0 0 10px 10px;
+        /* z-index: 1000; */
+        /* height: 100vh; */
+        overflow-y: auto;
+    }
+
+    #menu.active {
+        display: flex;
+    }
+
+    #menu li {
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+    }
+
+    #menu li a {
+        width: 100%;
+        display: block;
+        padding: 12px 0;
+        color: white;
+        text-decoration: none;
+        transition: background 0.3s ease;
+    }
+
+    #menu li a:hover {
+        background: rgba(0, 255, 255, 0.2);
+    }
+
+    .senhasFortes,
+    .navegacaoSegura {
+        background: rgba(4, 1, 116, 1);          /* Fundo azul */
+        color: white;              /* Texto branco */
+        width: 100%;               /* Ocupa toda a largura disponível */
+        max-width: 1300px;         /* Limita a largura máxima */
+        border-radius: 20px;       /* Bordas arredondadas */
+        padding: 50px;             /* Espaçamento interno */
+        font-size: 35px;           /* Tamanho do texto */
+        animation: fadeUp 2s ease-out forwards; /* Animar elemento com fadeUP*/
+    }
+
+    /* Rodapé empilhado vertical */
+    div.footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Blocos do rodapé ocupam largura total */
+    .sobre,
+    .linksuteis {
+        flex: 1 1 100%;
+    }
+
+    /* Espaçamento na frase final */
+    .fraseconscientização {
         margin-top: 20px;
     }
 }
