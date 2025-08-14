@@ -60,9 +60,13 @@ Compartilhe com sua comunidade e ajude a espalhar a segurança digital!
 
 ---
 
-## 👩‍🏫 Autor
+## 👩‍🏫 Autores
 
 **Henrique Alcântara**  
 Linkedin: https://www.linkedin.com/in/henriquealc
+
+**Thiago Felipe**  
+Linkedin: https://www.linkedin.com/in/thiagofelipeac/
+
 
 
