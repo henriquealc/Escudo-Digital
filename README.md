@@ -12,7 +12,7 @@ O objetivo é criar um site interativo, didático e fácil de entender, com dica
 - 👶👵 Conteúdo adaptado para crianças e idosos
 - 🌐 Acessível em linguagem clara e visual amigável
 - 📚 Inclui cards visuais, resumos e ilustrações educativas
-
+- 🔗 LINK DE ACESSO AO SITE: https://henriquealc.github.io/Escudo-Digital/
 ---
 
 ## 📂 Conteúdo do Site
