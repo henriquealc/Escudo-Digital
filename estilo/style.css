@@ -52,7 +52,10 @@ header nav {
     justify-content: space-between;         /* Espaça os itens igualmente entre os lados */
     align-items: center;                    /* Alinha verticalmente ao centro */
     z-index: 1000;                          /* Fica por cima dos outros elementos*/
+    box-shadow: 5px 5px 15px rgba(12, 12, 255, 0.301);
+
 }
+
 
 /* Esconde o botão no desktop */
 .menu-toggle {
@@ -159,7 +162,6 @@ nav a:focus-visible {
     justify-content: center;  /* Centraliza horizontalmente */
     align-items: center;      /* Centraliza verticalmente */
     padding: 40px 20px;       /* Espaçamento interno */
-
 }
 
 /* Estiliza duas seções específicas */
@@ -173,6 +175,7 @@ nav a:focus-visible {
     padding: 50px;             /* Espaçamento interno */
     font-size: 20px;           /* Tamanho do texto */
     animation: fadeUp 2s ease-out forwards; /* Animar elemento com fadeUP*/
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.801);
 }
 
 /* Envolve imagem e texto em uma estrutura flexível */
