@@ -28,6 +28,7 @@
                 <li><a href="#celular">📱 Celulares/Tablets</a></li>
                 <li><a href="#redes">👥 Redes Sociais</a></li>
                 <li><a href="#seguranca">👨‍👩‍👧‍ Segurança Idosos/Criança</a></li>
+                <li><a href="#SenhaSegura">&#128274; Gerador de Senha Segura</a></li>
                 <li><a style="color: aqua; border-radius: 10px;" target="_blank" href="https://new.safernet.org.br/denuncie">⚠️ Denuncie</a></li>
             </ul>
         </nav>
@@ -219,6 +220,30 @@
                     <p class="destaque">🛡️ A internet é um lugar legal, mas é preciso saber se proteger. Sempre que tiver dúvida, peça ajuda!</p>
                 </div>
                 <img src="imagens/img/seguraca-na-internet-crianca-e-idosos.png" alt="Segurançaa na internet crianças e idosos">
+            </div>
+        </section>
+    </div>
+
+    <div class="container02" id="SenhaSegura">
+        <section class="navegacaoSegura reveal reveal-delay-2">
+            <div class="content-wrapper">
+                <div class="text">
+                    <h1>🔒 Gerador de Senha Segura</h1>
+
+                    <label for="tamanho">Tamanho da senha:</label>
+                    <input type="number" id="tamanho" value="16" min="4" max="64">
+
+                    <div>
+                        <label><input type="checkbox" id="minusculas" checked> Minúsculas</label>
+                        <label><input type="checkbox" id="maiusculas" checked> Maiúsculas</label>
+                        <label><input type="checkbox" id="numeros" checked> Números</label>
+                        <label><input type="checkbox" id="simbolos" checked> Símbolos</label>
+                    </div>
+
+                    
+                </div>
+                <button onclick="gerar()">Gerar Senha</button>
+                <div id="senha">Sua senha aparecerá aqui</div>
             </div>
         </section>
     </div>

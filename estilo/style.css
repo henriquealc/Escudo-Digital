@@ -49,7 +49,7 @@ header nav {
     background: rgba(4, 1, 116, 1);       /* Cor de fundo azul */
     display: flex;                          /* Usa Flexbox para alinhar os elemntos em linha */
     flex-wrap: wrap;                        /* Permite que itens quebrem linha se necessário */
-    justify-content: space-between;         /* Espaça os itens igualmente entre os lados */
+    justify-content: center;         /* Espaça os itens igualmente entre os lados */
     align-items: center;                    /* Alinha verticalmente ao centro */
     z-index: 1000;                          /* Fica por cima dos outros elementos*/
     box-shadow: 5px 5px 15px rgba(12, 12, 255, 0.301);
@@ -156,7 +156,7 @@ nav a:focus-visible {
 
 /* Container geral para seções */
 .container02 {
-    min-height: auto;  /* Altura da tela menos a altura da navbar (60px) */
+    min-height: auto;  
     background: #94949488;       /* Fundo cinza claro */
     display: flex;             /* Usa Flexbox para alinhar conteúdo */
     justify-content: center;  /* Centraliza horizontalmente */
@@ -230,6 +230,32 @@ nav a:focus-visible {
     margin-top: 10px;
 }
 
+/* Gerador de senha */
+#senha {
+      margin-top: 20px;
+      font-size: 35px;
+      font-weight: bold;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      word-break: break-all;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 8px;
+      border: none;
+      background: #4CAF50;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
+    }
+
 /* Estilo geral do rodapé */
 footer {
     background-color: rgba(4, 1, 116, 1);
@@ -283,6 +309,9 @@ div.footer {
 
 /* RESPONSIVIDADE */
 @media (max-width: 992px) {
+    nav a {
+        font-size: 30px;
+}
     /* Alinha texto e imagem em coluna */
     .content-wrapper {
         flex-direction: column;
@@ -320,8 +349,8 @@ div.footer {
         width: 100%;
         padding: 60px 0 20px 0;
         border-radius: 0 0 10px 10px;
-        /* z-index: 1000; */
-        /* height: 100vh; */
+        z-index: 1000;
+        height: 100vh;
         overflow-y: auto;
     }
 
@@ -355,9 +384,54 @@ div.footer {
         width: 100%;               /* Ocupa toda a largura disponível */
         max-width: 1300px;         /* Limita a largura máxima */
         border-radius: 20px;       /* Bordas arredondadas */
-        padding: 50px;             /* Espaçamento interno */
+        padding: 30px;             /* Espaçamento interno */
         font-size: 35px;           /* Tamanho do texto */
         animation: fadeUp 2s ease-out forwards; /* Animar elemento com fadeUP*/
+    }
+
+    .content-wrapper img {
+        max-width: 100%;
+    }
+
+    .text{
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    #senha {
+      margin-top: 20px;
+      font-size: 30px;
+      font-weight: bold;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      word-break: break-all;
+    }
+
+    #tamanho {
+        width: 90px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    #minusculas, #maiusculas, #numeros, #simbolos {
+        width: 50px;
+        height: 35px;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 8px;
+      border: none;
+      background: #4CAF50;
+      color: white;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #45a049;
     }
 
     /* Rodapé empilhado vertical */
@@ -433,11 +507,59 @@ div.footer {
     #menu li a:hover {
         background: rgba(0, 255, 255, 0.2);
     }
+    
 
     /* Reduz padding das seções para mobile */
     .senhasFortes,
     .navegacaoSegura {
-        padding: 30px;
+        font-size: 22px;
+        padding: 20px;
+    }
+
+    .content-wrapper{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .content-wrapper img {
+        max-width: 100%;
+    }
+
+    .text {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    #senha {
+      margin-top: 20px;
+      font-size: 30px;
+      font-weight: bold;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      word-break: break-all;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 8px;
+      border: none;
+      background: #4CAF50;
+      color: white;
+      font-size: 25px;
+      cursor: pointer;
+    }
+
+    #tamanho {
+        width: 80px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    #minusculas, #maiusculas, #numeros, #simbolos {
+        width: 40px;
+        height: 25px;
     }
 
     /* Rodapé empilhado vertical */
