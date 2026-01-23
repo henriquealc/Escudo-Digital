@@ -35,11 +35,6 @@ O site contém seções com dicas práticas sobre:
 - [📊 Imagens e ilustrações geradas com IA]  
 - Responsividade pensada para mobile e desktop
 
----
-
-## 🚧 Em desenvolvimento
-
-- 🗂️ Versão PDF para impressão  
 
 ---
 
