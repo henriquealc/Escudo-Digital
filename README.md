@@ -206,7 +206,7 @@ Abra o `index.html` no navegador.
 Adicione aqui o link do GitHub Pages:
 
 ```txt
-https://henriquealc.github.io/Escudo-Digital-V2/
+https://henriquealc.github.io/Escudo-Digital/
 ```
 
 ---
