@@ -1,67 +1,242 @@
-# 🛡️ Cartilha Digital de Segurança na Internet
+# 🛡️ Escudo Digital
 
-Este é um projeto educacional com foco em **segurança digital acessível para todas as idades**, especialmente crianças, idosos e usuários iniciantes na internet.
+Projeto educativo sobre segurança digital desenvolvido como atividade extensionista da **Uninter 2026**.
 
-O objetivo é criar um site interativo, didático e fácil de entender, com dicas práticas sobre como navegar na internet de forma segura.
-
----
-
-## 🔍 Sobre o Projeto
-
-- 📱 Ensina boas práticas de segurança online
-- 👶👵 Conteúdo adaptado para crianças e idosos
-- 🌐 Acessível em linguagem clara e visual amigável
-- 📚 Inclui cards visuais, resumos e ilustrações educativas
-- 🔗 LINK DE ACESSO AO SITE: https://henriquealc.github.io/Escudo-Digital/
----
-
-## 📂 Conteúdo do Site
-
-O site contém seções com dicas práticas sobre:
-
-- ✅ **Senhas Fortes**
-- 🧭 **Navegação Segura**
-- 📧 **Cuidado com E-mails Falsos**
-- 📱 **Uso Seguro do Celular**
-- 👥 **Segurança nas Redes Sociais**
-- 🖥️ **Proteção de Dispositivos**
-- 👨‍👩‍👧 **Cuidados especiais para Crianças e Idosos**
+O objetivo do projeto é ensinar práticas básicas de proteção na internet de forma simples, visual e acessível para qualquer pessoa.
 
 ---
 
-## 💡 Tecnologias Usadas
+# 📚 Sobre o projeto
 
-- HTML5 + CSS3    
-- [📊 Imagens e ilustrações geradas com IA]  
-- Responsividade pensada para mobile e desktop
+O **Escudo Digital** é uma aplicação web responsiva que apresenta dicas de segurança digital em diferentes áreas:
 
+- 🔐 Senhas seguras
+- 🌐 Navegação segura
+- 📧 Golpes por e-mail
+- 📱 Segurança no celular
+- 👥 Redes sociais
+- ❤️ Proteção para idosos e crianças
+- 🔒 Gerador de senhas seguras
 
----
+O site foi construído utilizando apenas tecnologias front-end puras:
 
-## 🤝 Contribuições
-
-Sinta-se à vontade para abrir *Issues* ou *Pull Requests*. Toda ajuda é bem-vinda, principalmente com:
-
-- Correção de textos
-- Tradução para outros idiomas
-- Sugestões de conteúdo educativo
-
----
-
-## 📜 Licença
-
-Este projeto está sob a licença [MIT](LICENSE).  
-Compartilhe com sua comunidade e ajude a espalhar a segurança digital!
+- HTML5
+- CSS3
+- JavaScript Vanilla
 
 ---
 
-## 👩‍🏫 Autores
+# 🚀 Funcionalidades
 
-**Henrique Alcântara**  
-Linkedin: https://www.linkedin.com/in/henriquealc
+## ✅ Sistema de abas/carrossel
 
-**Thiago Felipe**  
-Linkedin: https://www.linkedin.com/in/thiagofelipeac/
+O projeto possui um carrossel horizontal com abas interativas que exibem diferentes painéis de conteúdo.
 
+### Recursos:
+- Navegação dinâmica
+- Botões sincronizados
+- Scroll suave
+- Interface responsiva
+- Painéis com animação fade-in
 
+---
 
+## 🔒 Gerador de senhas
+
+Ferramenta integrada para criação de senhas seguras.
+
+### O usuário pode:
+- Escolher o tamanho da senha
+- Ativar/desativar:
+  - letras minúsculas
+  - letras maiúsculas
+  - números
+  - símbolos
+- Copiar a senha gerada
+- Visualizar a força da senha
+
+### Classificação:
+- 🔴 Fraca
+- 🟡 Moderada
+- 🟢 Forte
+- 🟢 Muito forte
+
+---
+
+# 🧱 Estrutura do projeto
+
+```bash
+Escudo-Digital/
+│
+├── index.html
+│
+├── css/
+│   ├── style.css
+│   
+│
+├── js/
+│   └── script.js
+│
+├── arquivos/
+│   └── EscudoDigital.pdf
+│
+└── README.md
+```
+
+---
+
+# 🖥️ Tecnologias utilizadas
+
+## HTML5
+Utilizado para estruturar semanticamente o conteúdo da página.
+
+### Tags semânticas utilizadas:
+- `<header>`
+- `<section>`
+- `<main>`
+- `<footer>`
+
+---
+
+## CSS3
+Responsável pela estilização e responsividade.
+
+### Recursos utilizados:
+- Flexbox
+- CSS Grid
+- Media Queries
+- Pseudo-classes
+- Animações
+- Hover effects
+- Variáveis visuais modernas
+
+---
+
+## JavaScript
+Responsável pelas interações da aplicação.
+
+### Funcionalidades implementadas:
+- Controle de abas
+- Scroll automático
+- Geração de senhas
+- Verificação de força
+- Cópia para área de transferência
+- Atualização dinâmica da interface
+
+---
+
+# 📱 Responsividade
+
+O projeto foi desenvolvido com foco em dispositivos móveis e desktop.
+
+### Compatível com:
+- Smartphones
+- Tablets
+- Notebooks
+- Monitores widescreen
+
+---
+
+# 🎨 Interface
+
+O design utiliza uma proposta moderna em tema escuro inspirada em aplicações de segurança digital.
+
+### Características:
+- Layout minimalista
+- Ícones intuitivos
+- Feedback visual
+- Contraste acessível
+- Navegação simples
+
+---
+
+# 🧠 Conceitos aplicados
+
+Durante o desenvolvimento foram aplicados conceitos importantes de front-end:
+
+## HTML
+- Semântica
+- Estruturação
+- Acessibilidade
+
+## CSS
+- Flexbox
+- Grid Layout
+- Responsividade
+- Organização em seções
+
+## JavaScript
+- DOM
+- Eventos
+- Loops
+- Arrays
+- Manipulação de classes
+- Funções
+- Clipboard API
+
+---
+
+# 📖 Como executar o projeto
+
+## 1. Clone o repositório
+
+```bash
+git clone https://github.com/seuusuario/escudo-digital.git
+```
+
+---
+
+## 2. Abra a pasta
+
+```bash
+cd escudo-digital
+```
+
+---
+
+## 3. Execute o arquivo
+
+Abra o `index.html` no navegador.
+
+---
+
+# 🌐 Demonstração
+
+## Projeto online:
+Adicione aqui o link do GitHub Pages:
+
+```txt
+https://henriquealc.github.io/Escudo-Digital-V2/
+```
+
+---
+
+# 👨‍💻 Autores
+
+## Henrique Alcântara
+- LinkedIn:
+https://www.linkedin.com/in/henriquealc/
+
+---
+
+## Thiago Felipe
+- LinkedIn:
+https://www.linkedin.com/in/thiagofelipeac/
+
+---
+
+# 🎓 Instituição
+
+Projeto extensionista desenvolvido para a:
+
+## UNINTER — Centro Universitário Internacional
+
+Ano: **2026**
+
+---
+
+# 📄 Licença
+
+Este projeto possui finalidade educacional.
+
+Uso livre para estudos e aprendizado.
