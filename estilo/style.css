@@ -1,582 +1,558 @@
-/* Remove margens e espaçamentos padrão dos navegadores e usa box-sizing mais previsível */
+@charset "UTF-8";
+
 * {
-    margin: 0;
-    padding: 0;
+    padding: 0px;
+    margin: 0px;
     box-sizing: border-box;
 }
 
-/* Adiciona rolagem suave ao navegar por âncoras da página */
-html {
+html{
     scroll-behavior: smooth;
 }
 
-/* Define uma fonte padrão para todo o site */
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f0f0f0;
-    padding-top: 190px
-}
-
-/* ANIMAÇÃO GERAL */
-@keyframes fadeUp {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.reveal {
-    opacity: 0;
-    animation: fadeUp 1s ease-out forwards;
-}
-
-.reveal-delay-1 { animation-delay: 0.2s; }
-.reveal-delay-2 { animation-delay: 0.4s; }
-.reveal-delay-3 { animation-delay: 0.6s; }
-.reveal-delay-4 { animation-delay: 0.8s; }
-
-/* Estilo do menu de navegação dentro do cabeçalho */
-header nav {
-    position: fixed;
-    top:0;
-    left:0;
-    width: 100%;
-    padding: 10px 30px;                     /* Espaço interno ao redor do conteúdo */
-    background: rgba(4, 1, 116, 1);       /* Cor de fundo azul */
-    display: flex;                          /* Usa Flexbox para alinhar os elemntos em linha */
-    flex-wrap: wrap;                        /* Permite que itens quebrem linha se necessário */
-    justify-content: center;         /* Espaça os itens igualmente entre os lados */
-    align-items: center;                    /* Alinha verticalmente ao centro */
-    z-index: 1000;                          /* Fica por cima dos outros elementos*/
-    box-shadow: 5px 5px 15px rgba(12, 12, 255, 0.301);
-
+body{
+    font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #1E1E1C;
 }
 
 
-/* Esconde o botão no desktop */
-.menu-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    width: 30px;
-    height: 25px;
-    position: relative;
-    z-index: 1001;
+/*HEADER*/
+.topo{
+    background-color: #252523;
+    padding: 14px 24px;
+    display: flex; /*coloca os filho lado a lado*/
+    align-items: center;
+    border-bottom: 1px solid #555553; /*Linha separadora embaixo*/
 }
 
-/* Menu em barras */
-.menu-toggle span {
-    display: block;
-    height: 3px;
-    width: 100%;
-    background: #FFF;
-    margin: 5px 0;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-/* X quando menu for clicado */
-.menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-.menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-.menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(6px, -6px);
-}
-
-#menu {
-    list-style: none;
+.logo{
     display: flex;
-    gap: 15px;
+    align-items: center; /* Alinha o ícone e o texto no meio verticalmente */
+    gap: 10px; /* Espaço de 10px entre o ícone e o bloco de texto */
 }
 
-/* Cores e estilo base */
-#menu li a {
-    text-decoration: none;
+.logo-icone{
+    font-size: 40px; /* Tamanho do emoji do escudo */
+}
+
+.logo-titulo{
     color: white;
-    padding: 8px 15px;
-    border-radius: 8px;
-    transition: background 0.3s ease, transform 0.3s ease;
-}
-#menu li a:hover {
-    background-color: rgba(0, 255, 255, 0.2);
-    transform: scale(1.05);
-}
-
-/* Link "Denuncie" com destaque */
-#menu li a.denuncie {
-    color: aqua;
-    border: 1px solid aqua;
-}
-#menu li a.denuncie:hover {
-    background: aqua;
-    color: black;
-}
-
-/* Estiliza a imagem do logo dentro do menu */
-nav img {
-    max-width: 180px;    /* Define uma largura máxima */
-    height: auto;        /* Mantém a proporção da imagem */
-}
-
-/* Estilo da lista de links no menu */
-nav ul {
-    display: flex;           /* Coloca os itens em linha */
-    flex-wrap: wrap;         /* Permite quebrar linha quando não couber */
-    list-style: none;        /* Remove marcadores de lista */
-    gap: 10px;               /* Espaço entre os itens */
-    margin-left: auto;       /* Empurra a lista para o lado direito */
-}
-
-/* Estilo geral dos links */
-nav a {
-    color: white;                  /* Cor do texto branca */
-    text-decoration: none;         /* Remove sublinhado */
-    font-family: system-ui, sans-serif;
-    text-transform: uppercase;     /* Transforma o texto em maiúsculas */
-    padding: 10px;                 /* Espaçamento interno */
-    font-weight: bold;            /* Deixa o texto em negrito */
-    transition: all 0.3s ease;    /* Anima suavemente a transição de estilos */
-    border-radius: 8px;           /* Arredonda as bordas */
-}
-
-nav a:hover,
-nav a:focus-visible {
-    background: rgb(12, 12, 255);  /* Fundo azul mais claro */
-    color: aqua;                   /* Cor do texto em azul claro */
-    outline: none;
-}
-
-/* Container geral para seções */
-.container02 {
-    min-height: auto;  
-    background: #94949488;       /* Fundo cinza claro */
-    display: flex;             /* Usa Flexbox para alinhar conteúdo */
-    justify-content: center;  /* Centraliza horizontalmente */
-    align-items: center;      /* Centraliza verticalmente */
-    padding: 40px 20px;       /* Espaçamento interno */
-}
-
-/* Estiliza duas seções específicas */
-.senhasFortes,
-.navegacaoSegura {
-    background: rgba(4, 1, 116, 1);          /* Fundo azul */
-    color: white;              /* Texto branco */
-    width: 100%;               /* Ocupa toda a largura disponível */
-    max-width: 1300px;         /* Limita a largura máxima */
-    border-radius: 20px;       /* Bordas arredondadas */
-    padding: 50px;             /* Espaçamento interno */
-    font-size: 20px;           /* Tamanho do texto */
-    animation: fadeUp 2s ease-out forwards; /* Animar elemento com fadeUP*/
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.801);
-}
-
-/* Envolve imagem e texto em uma estrutura flexível */
-.content-wrapper {
-    display: flex;                   /* Layout flexível */
-    align-items: center;            /* Alinha verticalmente */
-    justify-content: space-between; /* Espaça os elementos igualmente */
-    gap: 30px;                      /* Espaço entre imagem e texto */
-}
-
-/* Texto ocupa uma parte proporcional do espaço */
-.content-wrapper .text {
-    flex: 1;
-}
-
-/* Imagem ao lado do texto */
-.content-wrapper img {
-    flex: 1;                    /* Ocupa o mesmo espaço do texto */
-    max-width: 500px;           /* Limite máximo de largura */
-    width: 100%;                /* Responsivo */
-    height: auto;               /* Mantém a proporção */
-    border-radius: 10px;        /* Bordas arredondadas */
-    transition: transform 0.3s ease; /* Anima suavemente a mudança na propriedade */
-}
-
-.content-wrapper img:hover {
-    transform: scale(1.03);
-}
-
-/* Espaçamento adicional para o texto */
-.text {
-    margin-top: 60px;
-}
-
-/* Estilo da lista dentro do bloco de texto */
-.text ul {
-    color: white;
-    padding: 20px;
-    padding-left: 40px; /* Recuo da lista */
-}
-
-/* Espaçamento nos títulos */
-.text h2,
-.text h3 {
-    margin-top: 10px;
-}
-
-/* Destaque em amarelo */
-.destaque {
     font-weight: bold;
-    color: yellow;
-    margin-top: 10px;
+    font-size: 19px;
+    line-height: 1.2; /*controla o espaço entre linhas.
+       1.2 = 120% do tamanho da fonte */
 }
 
-/* Gerador de senha */
-#senha {
-      margin-top: 20px;
-      font-size: 35px;
-      font-weight: bold;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      word-break: break-all;
-    }
-
-    button {
-      padding: 10px 20px;
-      margin-top: 15px;
-      border-radius: 8px;
-      border: none;
-      background: #4CAF50;
-      color: white;
-      font-size: 20px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #45a049;
-    }
-
-/* Estilo geral do rodapé */
-footer {
-    background-color: rgba(4, 1, 116, 1);
-    color: white;                    /* Texto branco */
-    padding: 40px 20px;
+.logo-sub{
+    color: rgba(255, 255, 255, 0.55);
+    font-size: 14px;
 }
 
-/* Container flexível para o conteúdo do rodapé */
-div.footer {
-    display: flex;
-    flex-wrap: wrap;                /* Permite quebra de linha em telas menores */
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: auto;                   /* Centraliza o conteúdo */
-    font-size: 20px;
-}
-
-/* Blocos de conteúdo do rodapé */
-.sobre,
-.linksuteis {
-    flex: 1;                        /* Tamanho proporcional */
-    min-width: 200px;              /* Largura mínima */
-    margin-bottom: 20px;
-}
-
-/* Lista de links úteis */
-.linksuteis ul {
-    list-style: none;
-    padding: 0;
-}
-
-/* Links dentro da lista */
-.linksuteis ul a {
-    text-decoration: none;
+/*SECTION - HERO*/
+.hero{
+    background-color: #1E1E1C;
+    padding: 48px 24px 40px;
     color: white;
-    transition: color 0.3s ease;
-}
-
-/* Efeito hover nos links do rodapé */
-.linksuteis ul a:hover {
-    color: aqua;
-    border-radius: 10px;
-}
-
-/* Frase de conscientização centralizada */
-.fraseconscientização {
-    flex: 1 100%;           /* Ocupa linha inteira */
-    margin-top: 30px;
     text-align: center;
 }
 
-/* RESPONSIVIDADE */
-@media (max-width: 992px) {
-    nav a {
-        font-size: 30px;
-}
-    /* Alinha texto e imagem em coluna */
-    .content-wrapper {
-        flex-direction: column;
-        text-align: center;     /* Centraliza texto */
-    }
-
-    /* Imagem menor e centralizada */
-    .content-wrapper img {
-        max-width: 60%;
-        margin-top: 20px;
-    }
-
-    /* Reduz margem superior do texto */
-    .menu-toggle {
-        display: block;
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        z-index: 1100;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        width: 30px;
-        height: 30px;
-    }
-
-    #menu {
-        display: none;
-        flex-direction: column;
-        background: rgba(4, 1, 116, 1);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 60px 0 20px 0;
-        border-radius: 0 0 10px 10px;
-        z-index: 1000;
-        height: 100vh;
-        overflow-y: auto;
-    }
-
-    #menu.active {
-        display: flex;
-    }
-
-    #menu li {
-        text-align: center;
-        padding: 10px 0;
-        width: 100%;
-    }
-
-    #menu li a {
-        width: 100%;
-        display: block;
-        padding: 12px 0;
-        color: white;
-        text-decoration: none;
-        transition: background 0.3s ease;
-    }
-
-    #menu li a:hover {
-        background: rgba(0, 255, 255, 0.2);
-    }
-
-    .senhasFortes,
-    .navegacaoSegura {
-        background: rgba(4, 1, 116, 1);          /* Fundo azul */
-        color: white;              /* Texto branco */
-        width: 100%;               /* Ocupa toda a largura disponível */
-        max-width: 1300px;         /* Limita a largura máxima */
-        border-radius: 20px;       /* Bordas arredondadas */
-        padding: 30px;             /* Espaçamento interno */
-        font-size: 35px;           /* Tamanho do texto */
-        animation: fadeUp 2s ease-out forwards; /* Animar elemento com fadeUP*/
-    }
-
-    .content-wrapper img {
-        max-width: 100%;
-    }
-
-    .text{
-        margin-top: 20px;
-        text-align: center;
-    }
-
-    #senha {
-      margin-top: 20px;
-      font-size: 30px;
-      font-weight: bold;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      word-break: break-all;
-    }
-
-    #tamanho {
-        width: 90px;
-        height: 40px;
-        font-size: 20px;
-    }
-
-    #minusculas, #maiusculas, #numeros, #simbolos {
-        width: 50px;
-        height: 35px;
-    }
-
-    button {
-      padding: 10px 20px;
-      margin-top: 15px;
-      border-radius: 8px;
-      border: none;
-      background: #4CAF50;
-      color: white;
-      font-size: 25px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #45a049;
-    }
-
-    /* Rodapé empilhado vertical */
-    div.footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    /* Blocos do rodapé ocupam largura total */
-    .sobre,
-    .linksuteis {
-        flex: 1 1 100%;
-    }
-
-    /* Espaçamento na frase final */
-    .fraseconscientização {
-        margin-top: 20px;
-    }
+.badge{
+    /* O "Projeto extensionista - Uninter 2025" */
+    display: inline-block; /*o elemento não ocupa a linha inteira,
+    mas aceita padding e margin como um bloco */
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 5px 14px;
+    font-size: 14px;
+    border-radius: 99px; /*deixa bem arredondado como uma pilula*/
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.25); /* Borda bem sutil */
+    letter-spacing: 0.3px; /* Espaçamento levinho entre as letras */
 }
 
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 1100;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        font-size: 28px;
-        color: aqua;
-        padding: 0;
-        width: 30px;
-        height: 30px;
-    }
+.badge:hover{
+    color: #10632f;
+    background-color: #00c247;
+    border:1px solid #10632f;
+    transition: 1.0s;
+}
 
-    #menu {
-        display: none;
-        flex-direction: column;
-        background: rgba(4, 1, 116, 1);
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 60px 0 20px 0;
-        border-radius: 0 0 10px 10px;
-        z-index: 1000;
-        height: 100vh;
-        overflow-y: auto;
-    }
+.hero > h1{
+    font-size: 40px;
+    margin-bottom: 12px;
+    line-height: 1.25;
+    font-weight: 700;
+    letter-spacing: -0.5px; /* Valor negativo aproxima levemente as letras,
+       dando um look mais moderno em títulos grandes */
+}
 
-    #menu.active {
-        display: flex;
-    }
-
-    #menu li {
-        text-align: center;
-        padding: 10px 0;
-        width: 100%;
-    }
-
-    #menu li a {
-        width: 100%;
-        display: block;
-        padding: 12px 0;
-        color: white;
-        text-decoration: none;
-        transition: background 0.3s ease;
-    }
-
-    #menu li a:hover {
-        background: rgba(0, 255, 255, 0.2);
-    }
+.hero > h1:hover{
+    color: #00c247;
+    transition: color 1.0s;
     
+}
 
-    /* Reduz padding das seções para mobile */
-    .senhasFortes,
-    .navegacaoSegura {
-        font-size: 22px;
-        padding: 20px;
-    }
+.hero > p {
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 20px;
+    line-height: 1.5;
+    max-width: 480px; /* Limita a largura do parágrafo para não ficar largo demais */
+    margin-left: auto; 
+    margin-right: auto; /* auto nas laterais centraliza horizontalmente quando
+    o elemento tem max-width definido */
+}
 
-    .content-wrapper{
-        flex-direction: column;
-        gap: 15px;
-    }
+.hero-botoes {
+    display: flex;
+    gap: 10px; /* Espaço entre os botões */
+    align-items: center;
+    flex-direction: row; /* Botões lado a lado */
+    justify-content: center; /* Centraliza os botões */
+    flex-wrap: wrap; /* Se não couber na mesma linha (tela pequena),
+       quebra para a linha de baixo */
+}
 
-    .content-wrapper img {
-        max-width: 100%;
-    }
+.hero-botoes button{
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    padding: 0; /* O padding fica no <a> dentro do botão, não aqui,
+    para que a área clicável seja toda do link */
+    cursor: pointer;
+    transition: 0.2s;
+}
 
-    .text {
-        margin-top: 10px;
-        text-align: center;
-    }
+.hero-botoes button:hover{
+    /* :hover aplica estilo quando o mouse está em cima */
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.5);
+}
 
-    #senha {
-      margin-top: 20px;
-      font-size: 30px;
-      font-weight: bold;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      word-break: break-all;
-    }
+.hero-botoes button > a{
+    display: block; /*faz o link ocupar o espaço inteiro
+    do botão, tornando toda a área clicável */
+    color: white;
+    padding: 11px 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+}
 
-    button {
-      padding: 10px 20px;
-      margin-top: 15px;
-      border-radius: 8px;
-      border: none;
-      background: #4CAF50;
-      color: white;
-      font-size: 25px;
-      cursor: pointer;
-    }
+.hero-botoes .denuncie:hover{
+    background-color: rgba(224, 0, 0, 0.705);
+    transition: 1.0s;
+}
 
-    #tamanho {
-        width: 80px;
-        height: 35px;
-        font-size: 18px;
-    }
+/*CARROSEL*/
 
-    #minusculas, #maiusculas, #numeros, #simbolos {
-        width: 40px;
-        height: 25px;
-    }
+#carrosel {
+    display: flex;
+    justify-content: center;
+    background-color: #252523;
+    border-top: 1px solid #3a3a38;
+    border-bottom: 1px solid #3a3a38;
+    overflow: hidden; /* Esconde qualquer coisa que vaze para fora do container */
+    position: relative;
+}
 
-    /* Rodapé empilhado vertical */
-    div.footer {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+.trilha {
+    display: flex; /* Botões em fila horizontal */
+    gap: 4px;
+    padding: 10px 12px;
+    overflow-x: auto; /* Permite rolar horizontalmente quando os botões
+    não cabem na tela */
+    scrollbar-width: none; /* Esconde a barra de rolagem no Firefox */
+    -ms-behavior: none; /* Esconde a barra de rolagem no IE/Edge */
+    scroll-behavior: smooth;
+}
 
-    /* Blocos do rodapé ocupam largura total */
-    .sobre,
-    .linksuteis {
-        flex: 1 1 100%;
-    }
+.trilha::-webkit-scrollbar{
+    /* ::-webkit-scrollbar é um pseudo-elemento para
+    Chrome/Safari. display: none esconde a barra */
+    display: none;
+}
 
-    /* Espaçamento na frase final */
-    .fraseconscientização {
-        margin-top: 20px;
+.button-carrosel{
+    display: flex;
+    flex-direction: column; /* Ícone em cima, texto embaixo */
+    align-items: center;
+    gap: 5px; /* Espaço entre o ícone e o texto */
+    background-color: transparent;
+    border: 1px solid transparent; /* Borda invisível por padrão */
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.5); /* Texto acinzentado quando inativo */
+    padding: 10px 16px;
+    font-size: 12px;
+    cursor: pointer;
+    white-space: nowrap; /* Impede que o texto quebre em 2 linhas */
+    min-width: 72px;
+    transition: all 0.2s ease; /* "all" significa que qualquer propriedade que mudar vai ter a transição suavizada */
+    flex-shrink: 0; /* Impede que o botão encolha quando não há espaço.
+    Sem isso, os botões ficariam espremidos */
+}
+
+.button-carrosel span{
+    font-size: 11px; /* Texto abaixo do ícone um pouco menor */
+}
+
+.button-carrosel.ativa{
+    /* Classe adicionada pelo JavaScript quando o botão
+    está selecionado */
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15); /* Borda aparece */
+    color: #4ade80; 
+} 
+
+/*MAIN*/
+main {
+    background-color: #1E1E1C;
+    padding: 16px;
+    min-height: 400px; /* Garante altura mínima mesmo quando o conteúdo é pequeno, evitando que o rodapé suba demais */
+}
+
+
+.painel{
+    display: none; /* Todos os painéis ficam escondidos por padrão. O JavaScript adiciona a classe "ativo" no correto */
+    animation: fadeIn 0.25s ease;
+}
+
+.painel.ativo{
+    display: block;
+}
+
+@keyframes fadeIn {
+    /* Define a animação: começa invisível e levemente abaixo,
+    termina visível na posição normal */
+    from{
+        opacity: 0; /* Completamente transparente */
+        transform: translateY(6px); /* 6px abaixo da posição final */
     }
+    to {
+        opacity: 1; /* Totalmente visível */
+        transform: translateY(0); /* Posição normal */
+    }
+}
+
+
+/*ALERTAS — caixas coloridas de aviso no topo dos painéis*/
+.alerta {
+    /* Usado para avisos gerais — fundo âmbar/laranja */
+    background-color: #2E2618;
+    color: #d97706;
+    padding: 12px 16px;
+    font-size: 15px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border: 1px solid #78350f55;
+    line-height: 1.5;
+}
+
+.info{
+    /* Usado para informações neutras — fundo azul escuro */
+    background-color: #192028;
+    color: #60a5fa; /* Texto azul claro */
+    padding: 12px 16px;
+    font-size: 15px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border: 1px solid #1e3a5f;
+    line-height: 1.5;
+}
+
+.perigo{
+    /* Usado para avisos sérios — fundo vermelho escuro */
+    background-color: #2A1A1A;
+    color: #f87171;
+    padding: 12px 16px;
+    font-size: 15px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border: 1px solid #7f1d1d55;
+    line-height: 1.5;
+}
+
+.destaque{
+    background-color: #0f2318;
+    color: #4ade80;
+    padding: 12px 16px;
+    font-size: 15px;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    border-left: 4px solid #16a34a;
+    line-height: 1.5;
+}
+
+/*TITULOS DE SEÇÃO - Ex: como criar uma senha forte. etc*/
+.sesao-titulo {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.8px; /* Letras mais espaçadas */
+    text-transform: uppercase; /* Transforma em MAIÚSCULAS*/
+    color: rgba(255, 255, 255, 0.45);
+    margin-bottom: 12px;
+}
+
+
+/*cards grid - grade de 2 colunas para os cards*/
+.cards-grid {
+    display: grid; /* CSS Grid é o sistema de grade do CSS. É diferente do Flexbox: o Grid trabalha em 2 dimensões (linhas E colunas), o Flex em 1 dimensão (linha OU coluna) */
+    grid-template-columns: 1fr 1fr; /* 1fr = 1 fração do espaço disponível. "1fr 1fr" = 2 colunas de tamanho igual */
+    gap: 10px; /* Espaço entre os cards */
+    margin-bottom: 12px;
+}
+
+.cards-grid, .card:only-child{
+    /* :only-child seleciona o card quando ele é o único filho. grid-column: 1 / -1 faz ele ocupar todas as colunas */
+    grid-column: 1 / -1;
+}
+
+.card{
+    background-color: #252523;
+    border: 1px solid #3a3a38;
+    border-radius: 12px;
+    padding: 16px 14px;
+    display: flex;
+    flex-direction: column; /* Ícone, título e descrição em coluna */
+    gap: 8px;
+    align-items: flex-start; /* Alinha tudo à esquerda */
+    transition: border-color 0.2s;
+}
+
+.card:hover{
+    border-color: #555553; /* Borda fica levemente mais clara no hover */
+}
+
+.card-icone{
+    font-size: 22px;
+}
+
+.card-titulo{
+    font-weight: 700;
+    font-size: 14px;
+    color: white;
+    line-height: 1.3;
+}
+
+.card-descricao{
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.55);
+    line-height: 1.5;
+}
+
+
+.card.bom{
+    /* Card com borda verde — boas práticas */
+    border-color: #1a3a28;
+}
+
+.card.bom .card-icone{
+    color: #00c247;
+}
+
+.card.ruim{
+    border-color: #3a1a1a;
+}
+
+.card.aviso .card-icone{
+    border-color: #fbbf24;
+}
+
+
+/*DUAS COLUNAS - layout lado a lado*/
+.duas-colunas{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas iguais */
+    gap: 10px;
+}
+
+.card-lista{
+    background-color: #252523;
+    border: 1px solid #3a3a38;
+    border-radius: 12px;
+    padding: 16px 14px;
+}
+
+.card-lista.vermelho{
+    border-color: #3a1a1a; /* Variante vermelha — lado dos alertas */
+}
+
+.card-lista-titulo{
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.card-lista > ul{
+    list-style: none; /* Remove os pontinhos padrão da lista */
+    padding: 0;
+}
+
+.card-lista > ul > li{
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.8;
+    padding: 2px 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Linhas separadoras sutis entre os itens */
+}
+
+.card-lista > ul > li:last-child{
+    border-bottom: none; /*Remove a ultima linha que separa os itens*/
+}
+
+
+/*GERADOR DE SENHAS*/
+.gerador-box{
+    background-color: #252523;
+    border: 1px solid #3a3a38;
+    border-radius: 14px;
+    padding: 24px 20px;
+}
+
+.gerador-linha{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0 12px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);;
+}
+
+.gerador-linha input[type="range"]{
+    /* Estiliza só inputs do tipo range (o slider) */
+    flex: 1;
+    accent-color: #4ade80; /*muda a cor do controle nativo
+       (o polegar e a barra do slider) */
+}
+
+.gerador-checks{
+    /* Área com os checkboxes (minúsculas, maiúsculas, etc.) */
+    display: flex;
+    flex-direction: column; /* Um checkbox por linha */
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.gerador-checks label{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.75);
+    cursor: pointer;
+}
+
+.gerador-checks input[type="checkbox"]{
+    accent-color: #4ade80; /* Checkboxes com cor verde */
+    width: 15px;
+    height: 15px;
+}
+
+.btn-verde{
+    background-color: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    width: 100%; /* Botão ocupa a largura toda do container */
+    margin-bottom: 14px;
+}
+
+.btn-verde:hover{
+    background-color: #15803d; /* Verde um pouco mais escuro no hover */
+}
+
+/* Caixa que exibe a senha gerada */
+.senha-resultado{
+    background-color:#1a1a18;
+    border-radius: 1px solid #3a3a38;
+    border-radius: 8px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Senha à esquerda, botão à direita */
+    gap: 10px;
+    margin-bottom: 12px;
+    min-height: 48px;
+}
+
+#senha-gerada{
+    font-family: 'Courier New', monospace, sans-serif;
+    font-size: 15px;
+    color: #4ade80;
+    word-break: break-all; /* Permite quebrar a senha em qualquer caractere
+    para não vazar do container */
+    flex: 1; /* Ocupa o espaço disponível à esquerda */
+}
+
+.btn-copiar{
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+    color: white;
+    padding: 6px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    white-space: nowrap; /* Impede que o texto "Copiar" quebre */
+    transition: background 0.2s;
+}
+
+.btn-copiar:hover{
+    background-color: rgba(255, 255, 255, 0.14);
+    color: #4ade80;
+}
+
+.forca-label{
+    /* Texto "Senha fraca / forte / muito forte" */
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.45);
+    text-align: center;
+}
+
+
+/*RODAPÉ*/
+
+.rodape {
+    background-color: #252523;
+    border-top: 1px solid #3a3a38;
+    display: flex;
+    flex-direction: column; /* Texto e links empilhados */
+    padding: 24px 16px;
+    text-align: center;
+    gap: 10px;
+    align-items: center;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.rodape > p > a{
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.rodape > p > a:hover{
+    color: white;
+    transition: color 0.5s;
+}
+
+.rodape-links > a {
+    font-size: 13px;
+    font-weight: bolder;
+    padding: 4px 10px;
+    line-height: 2.0;
+    color: #4ade80;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.rodape-links > a:hover {
+    color: #86efac;
+    text-decoration: underline;
 }
