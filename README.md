@@ -203,8 +203,6 @@ Abra o `index.html` no navegador.
 # 🌐 Demonstração
 
 ## Projeto online:
-Adicione aqui o link do GitHub Pages:
-
 ```txt
 https://henriquealc.github.io/Escudo-Digital/
 ```
